@@ -148,3 +148,7 @@ button {
 .logout {
   display: none;
 }
+
+.checkout {
+  float: right;
+}
