@@ -1,3 +1,7 @@
+# Ignore my database
+database/products.db
+
+
 # Logs
 logs
 *.log
