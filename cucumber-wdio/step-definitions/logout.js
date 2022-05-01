@@ -1,5 +1,5 @@
 const { Given, When, Then } = require('@wdio/cucumber-framework');
-const pauseTime = 1000;
+const pauseTime = 3000;
 
 // browser.url - navigate to a page/url
 // browser.pause - pause execution for a number of ms
@@ -11,6 +11,7 @@ Then('I click the logout button', async () => {
     let logout_button = await browser.$('.navButtons .logout');
     logout_button.click();
     await browser.url('/');
+    await browser.pause(pauseTime);
 });
 
 Then('I should be logged out and should see the login button', async () => {
