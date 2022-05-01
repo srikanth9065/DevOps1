@@ -1,7 +1,7 @@
 const { Given, When, Then } = require('@wdio/cucumber-framework');
 const pauseTime = 1000;
 
-Given ('that I see a list of products',async()=>{
+Given ('I am on the home page with product list',async()=>{
     await browser.url('/');
 
 });
