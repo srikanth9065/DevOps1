@@ -1,15 +1,11 @@
-Feature: Login as a registered user
-   As a user I want to be able to login
-   with user id and password
-   so that I can buy products.
+Feature: Login as a registerd user
+    As a user I want to be able to login
+    so that I can buy products.
 
-   Background: I am on our grocery shop page
-     Given that I could see the Login button
-
-   Scenario: By clicking on login button
-        Given that I should be able to see the login page
-        When I enter Email as "anna.larsson@gmail.com" 
-        And "12345678" as password
-        Then I click on login button
-        And I should be able to see "Logout anna.larsson@gmail.com"
-        And so that I could see that I logged in as a user
+    Scenario: Clicking login button
+        Given that I can see the login button
+        When I click the login button at the navbar
+        And I should be seen Login form
+        When I fill in the form with "anna.larsson@gmail.com" and "12345678"
+        And I click the login button in the form
+        Then I should be logged in and see logout button
