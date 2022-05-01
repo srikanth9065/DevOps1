@@ -32,7 +32,7 @@ describe('Test the Product class', () => {
 
     // Check that the constructor really sets the correct property values and myproduct propery matches with product from database product.
     expect(myProduct.id).toBe(1);
-    expect(myProduct.name).toBe('Cookies Oatmeal Sugary ');
+    expect(myProduct.name).toBe('Cookies Oatmeal Sugary');
     expect(myProduct.price).toBe(106);
     expect(myProduct.description).toBe(`In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.`);
 
