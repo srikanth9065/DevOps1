@@ -1,5 +1,5 @@
 const { Given, When, Then } = require('@wdio/cucumber-framework');
-const pauseTime = 0;
+const pauseTime = 3000;
 
 // browser.url - navigate to a page/url
 // browser.pause - pause execution for a number of ms
@@ -8,6 +8,7 @@ const pauseTime = 0;
 
 Given('that I can see the product list', async () => {
   await browser.url('/');
+  await browser.pause(pauseTime);
 });
 
 When(/^I click on the buy button for "(.*)"$/, async (productName) => {
