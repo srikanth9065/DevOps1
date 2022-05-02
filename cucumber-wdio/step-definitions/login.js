@@ -1,5 +1,5 @@
 const { Given, When, Then } = require('@wdio/cucumber-framework');
-const pauseTime = 1000;
+const pauseTime = 10000;
 
 // browser.url - navigate to a page/url
 // browser.pause - pause execution for a number of ms
