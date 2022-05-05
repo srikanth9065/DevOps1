@@ -55,13 +55,29 @@ class ShoppingCart {
     }
     // add the totalSum
     html += `<tr>
-      <td colspan="3">Total:</td>
+      <td colspan="4">Total:</td>
       <td>${this.formatSEK(totalSum)}</td>
     </tr>`;
     html += '</table><button class="closeCart">X</button>';
-    html += '<button class="checkout">Checkout</button></div>'
+    html += '<button class="checkout">Checkout</button>'
+    html += '<button class="empty">Empty</button>-</div>'
     return html;
   }
+  async checkoutEmpty() {
+
+    let reqBody = [];
+    for (let orderRow of this.orderRows) {
+      reqBody.push({
+        quantity: orderRow.quantity,
+        productId: orderRow.product.id
+      });
+    }
+    // Empty the cart
+    this.orderRows = [];
+    document.querySelector('footer').innerHTML =
+      this.render();
+  }
+
 
   async checkout() {
 
@@ -84,7 +100,7 @@ class ShoppingCart {
     this.orderRows = [];
     document.querySelector('footer').innerHTML =
       this.render();
-    alert('Thank you for your order!');
+    alert('Thank you for your visiting!');
   }
 
 }
