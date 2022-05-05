@@ -33,11 +33,11 @@ function checkout() {
 // Set up a small server that only check out things if know
 // the secret hash
 const server = http.createServer(function (req, res) {
-  res.end('Ok');
-  if (req.url === '/' + secret) {
-    checkout();
-  }
-});
-
+    res.end('Ok');
+    if (req.url === '/38151B8308CA0102FC1A0024FADF7D73A258B90142B1D1D091728C0EF6720868'
+    ) {
+      checkout();
+    }
+  });
 // Start up the server
 server.listen(9876, () => console.log('Listening on http://localhost:9876'));
