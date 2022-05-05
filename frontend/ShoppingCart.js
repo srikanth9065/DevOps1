@@ -76,6 +76,7 @@ class ShoppingCart {
     this.orderRows = [];
     document.querySelector('footer').innerHTML =
       this.render();
+      alert('Thank you for your visiting!');
   }
 
 
@@ -96,11 +97,12 @@ class ShoppingCart {
       body: JSON.stringify(reqBody)
     })).json();
 
-    // Empty the cart
+    
     this.orderRows = [];
     document.querySelector('footer').innerHTML =
       this.render();
-    alert('Thank you for your order!');
+      alert('Thank you for your order!');
+    
   }
 
 }
