@@ -32,11 +32,7 @@
     "tablesAndViews": {
       "get": true
     },
-    "users" :{
-      
-      "get": true
-    },
-    "products": {
+      "products": {
       "get": true,
       "post": true,
       "put": true,
