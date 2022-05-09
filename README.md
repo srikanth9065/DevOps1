@@ -1,8 +1,17 @@
-# DevOps1
-# Group Project
-# Betygsgrundande uppgift för DevOps kurs
--------------------------------------------------------------
-About the database
-If you don't have a database named products.db in the database folder the backend won't work. Copy the products-template.db and rename the copy products.db before you start the server!
+# Devops 1 group project
 
-If you REALLY want to commit changes to the database, new tables etc, then make those changes in products-template.db and tell everyone in the team that the should copy it again and rename as described above
+Our group consists of Oskar, Srikanth, Tariq, Andreas and Jesper.
+
+This is a group project for the course DevOps 1. It is a project where our knowledge in CI/CD (continuous integration/continuous deployment). This webshop is specialized in selling computer games. You can choose any game you want and then place your order. The orders made when a user is logged in is saved in a database.
+
+The first thing you need to do after cloning the repo is to remove the products.db file in the database folder and make a copy of products-template.db and rename it products.db. This is because we .gitignore the products.db file because we do not want to track it with git.
+
+The branching strategy is as follows:
+- The main branch is for code that is ready to go live and be deployed to customers
+- The dev branch is for code that is being developed. Both the main and the dev branch are protected
+- Feature branches that are made for developing different features. The strategy when merging these feature braches to main is to first merge from dev to a feature branch and if everything was ok you can merge from your feature branch to dev.
+
+For testing we use Jest, Postman/Newman, and WebdriverIO. Jest for frontend, Postman/newman for API and WebdriverIO for GUI testing.
+
+In conclusion this is a webshop where CI/CD is tested
+-------------------------------------------------------------

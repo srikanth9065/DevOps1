@@ -2,7 +2,7 @@ name: Node.js CI
 
 on:
   push:
-    branches: [main, dev]
+    branches: [main, dev, feature-time]
   pull_request:
     branches: [main, dev]
 
@@ -38,6 +38,7 @@ jobs:
       # start up our backend
     - run: pm2 start backend/index.js
       # run our api tests
+    - run: newman run test-rest-api/test.postman_collection.json
     
 
   wdio-tests:
