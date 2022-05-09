@@ -32,6 +32,10 @@
     "tablesAndViews": {
       "get": true
     },
+    "users" :{
+      
+      "get": true
+    },
     "products": {
       "get": true,
       "post": true,
