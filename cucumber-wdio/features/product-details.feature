@@ -4,5 +4,5 @@ Feature: Product description
 
   Scenario: Clicking on the product name
     Given I am on the home page with product list
-    When I click on the product title "Cookies Oatmeal Sugary"
-    Then I see page with product "Cookies Oatmeal Sugary" details
+    When I click on the product title "Age of empires"
+    Then I see page with product "Age of empires" details

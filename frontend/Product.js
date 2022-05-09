@@ -16,6 +16,10 @@ class Product {
       if (typeof id !== 'number') {
         throw (new Error('id must be a number'))
       }
+      
+      if (typeof name !== 'string') {
+        throw (new Error('name must be a string'))
+      }
   
       // transfer parameters to properties
       this.id = id;
@@ -23,8 +27,7 @@ class Product {
       this.price = price;
       this.description = description;
       this.myProductList = myProductList;
-      this.image = 'https://source.unsplash.com/random/640x360/?'
-        + name.split(' -')[0];
+      this.image = 'images/image' + id + '.jpg';
     }
   
     // A method that shows info about the product as html

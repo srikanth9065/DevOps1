@@ -2,7 +2,7 @@ name: Node.js CI
 
 on:
   push:
-    branches: [main, dev,feature-postman]
+    branches: [main, dev, feature-html-css]
   pull_request:
     branches: [main, dev]
 

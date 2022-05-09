@@ -5,5 +5,5 @@ Feature: Shopping-cart
 
   Scenario: Clicking a buy button
     Given that I can see the product list
-    When I click on the buy button for "Cookies Oatmeal Sugary"
-    Then 1 item of "Cookies Oatmeal Sugary" should be added to the cart
+    When I click on the buy button for "Age of empires"
+    Then 1 item of "Age of empires" should be added to the cart

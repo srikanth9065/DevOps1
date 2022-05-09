@@ -28,13 +28,13 @@ describe('Test the Product class', () => {
 
   test('Creation of a New  Product', () => {
 
-    let myProduct = new Product(1, 'Cookies Oatmeal Sugary', 106, `In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.`);
+    let myProduct = new Product(4, 'Age of empires', 129, `RTS`);
 
     // Check that the constructor really sets the correct property values and myproduct propery matches with product from database product.
-    expect(myProduct.id).toBe(1);
-    expect(myProduct.name).toBe('Cookies Oatmeal Sugary');
-    expect(myProduct.price).toBe(106);
-    expect(myProduct.description).toBe(`In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.`);
+    expect(myProduct.id).toBe(4);
+    expect(myProduct.name).toBe('Age of empires');
+    expect(myProduct.price).toBe(129);
+    expect(myProduct.description).toBe(`RTS`);
 
   });
 
@@ -67,24 +67,24 @@ describe('Test the Product class', () => {
 
 describe('Checking the products propertise', () => {
 
-  test('Name is Cookies Oatmeal Sugary ', () => {
-    const name = 'Cookies Oatmeal Sugary';
-    expect(name).toBe('Cookies Oatmeal Sugary');
+  test('Name is Age of empires ', () => {
+    const name = 'Age of empires';
+    expect(name).toBe('Age of empires');
   });
 
-  test('Id is 1', () => {
-    const id = 1;
-    expect(id).toBe(1);
+  test('Id is 4', () => {
+    const id = 4;
+    expect(id).toBe(4);
   });
 
-  test('Cookies Oatmeal Sugary', () => {
-    const description = `In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.`;
-    expect(description).toBe(`In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.`);
+  test('Age of empires', () => {
+    const description = `RTS`;
+    expect(description).toBe(`RTS`);
   });
 
-  test('Price is 106', () => {
-    const price = 106;
-    expect(price).toBe(106);
+  test('Price is 129', () => {
+    const price = 129;
+    expect(price).toBe(129);
   });
 
 });
