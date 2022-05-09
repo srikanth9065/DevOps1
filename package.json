@@ -20,12 +20,12 @@
         "chromedriver": "^100.0.0",
         "dotenv": "^16.0.0",
         "jest": "^27.5.1",
-        "wdio-chromedriver-service": "^7.3.2",
-        "jsdom": "^19.0.0"
+        "jsdom": "^19.0.0",
+        "wdio-chromedriver-service": "^7.3.2"
     },
     "dependencies": {
         "better-express-store": "^1.0.4",
-        "better-sqlite3": "^7.5.0",
+        "better-sqlite3": "^7.5.1",
         "express": "^4.17.3",
         "express-session": "^1.17.2"
     }
