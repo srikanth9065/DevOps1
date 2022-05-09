@@ -23,8 +23,7 @@ class Product {
       this.price = price;
       this.description = description;
       this.myProductList = myProductList;
-      this.image = 'https://source.unsplash.com/random/640x360/?'
-        + name.split(' -')[0];
+      this.image = 'images/image' + id + '.jpg';
     }
   
     // A method that shows info about the product as html
