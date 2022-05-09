@@ -1,9 +1,14 @@
 # Betygsgrundande uppgift för DevOps kurs
-Detta är vårt inlämningsarbete för kursen DevOps 1. Arbetet består i att arbeta med en webshop och samtidigt integrera testning, automatisering och CI/CD (continuous integration/continuous deployment). Vi har en fungerande webshop med ett antal påhittade varor som man kan lägga i varukorgen och sedan lägga sin order. Ordrarna sparas i en databas och kan ses av en admin. Vi har ett antal användare med olika rättigheter i systemet.
+This is a group project for the course DevOps 1. It is a project where our knowledge in CI/CD (continous integration/continous deployment). This webshop is specialized in selling computer games. You can choose any game you want and then place your order. The orders made when a user is logged in is saved in a database.
 
-Vi har arbetat med git som versionshanterare. Där har vi dev- och mainbranchen som är skyddade och så har vi diverse feature-branches som vi sedan har mergat till dev-branchen.
+The first thing you need to do after cloning the repo is to remove the products.db file in the database folder and make a copy of products-template.db and rename it products.db. This is because we .gitignore the products.db file because we do not want to track it with git.
 
-För testning av frontend använder vi jest. För att testa REST-api använder vi Postman/Newman. Vi använder även Webdriver.IO som headless browser. För varje pull request till dev eller main så sker tester automatiskt via GitHub actions.
+The branching strategy is as follows:
+- The main branch is for code that is ready to go live and be deployed to customers
+- The dev branch is for code that is being developed. Both the main and the dev branch are protected
+- Feature branches that are made for developing different features. The strategy when merging these feature braches to main is to first merge from dev to a feature branch and if everything was ok you can merge from your feature branch to dev.
 
-Sammanfattat en webshop som testar våra kunskaper inom CI/CD.
+For testing we use Jest, Postman/Newman, and WebdriverIO. Jest for frontend, Postman/newman for API and WebdriverIO for GUI testing.
+
+In conclusion this is a webshop where CI/CD is tested
 -------------------------------------------------------------
