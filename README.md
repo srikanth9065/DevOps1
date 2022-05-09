@@ -1,5 +1,8 @@
-# Betygsgrundande uppgift för DevOps kurs
-This is a group project for the course DevOps 1. It is a project where our knowledge in CI/CD (continous integration/continous deployment). This webshop is specialized in selling computer games. You can choose any game you want and then place your order. The orders made when a user is logged in is saved in a database.
+# Devops 1 group project
+
+Our group consists of Oskar, Srikanth, Tariq, Andreas and Jesper.
+
+This is a group project for the course DevOps 1. It is a project where our knowledge in CI/CD (continuous integration/continuous deployment). This webshop is specialized in selling computer games. You can choose any game you want and then place your order. The orders made when a user is logged in is saved in a database.
 
 The first thing you need to do after cloning the repo is to remove the products.db file in the database folder and make a copy of products-template.db and rename it products.db. This is because we .gitignore the products.db file because we do not want to track it with git.
 
