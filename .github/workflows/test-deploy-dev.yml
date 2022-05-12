@@ -103,30 +103,30 @@ jobs:
 
   setdev:
     needs: [api-tests, wdio-tests, jest-tests]
-        runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-        steps:
-          - name: Configure SSH
-            run: |
-              mkdir -p ~/.ssh/
-              echo "$SSH_KEY" > ~/.ssh/dev.key
-              chmod 600 ~/.ssh/dev.key
-              cat >>~/.ssh/config <<END
-              Host dev
-                HostName $SSH_HOST
-                User $SSH_USER
-                Port $SSH_PORT
-                IdentityFile ~/.ssh/dev.key
-                StrictHostKeyChecking no
-              END
+    steps:
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_KEY" > ~/.ssh/dev.key
+          chmod 600 ~/.ssh/dev.key
+          cat >>~/.ssh/config <<END
+          Host dev
+            HostName $SSH_HOST
+            User $SSH_USER
+            Port $SSH_PORT
+            IdentityFile ~/.ssh/dev.key
+            StrictHostKeyChecking no
+          END
 
-            env:
-              SSH_KEY: ${{ secrets.SSH_KEY }}
-              SSH_HOST: ${{ secrets.SSH_HOST }}
-              SSH_USER: ${{ secrets.SSH_USER }}
-              SSH_PORT: ${{ secrets.SSH_PORT }}
+        env:
+          SSH_KEY: ${{ secrets.SSH_KEY }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
 
-          - name: Deploy from dev 
-            run: ssh dev 'cd /var/www/dev.stackyield.net && git fetch && git reset --hard origin/dev && npm install'
-          - name: Restart app 
-            run: ssh dev 'pm2 restart dev'
+      - name: Deploy from dev 
+        run: ssh dev 'cd /var/www/dev.stackyield.net && git fetch && git reset --hard origin/dev && npm install'
+      - name: Restart app 
+        run: ssh dev 'pm2 restart dev'
