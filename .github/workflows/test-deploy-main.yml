@@ -1,4 +1,4 @@
-name: Test and deploy main
+name: main
 
 on:
   push:
@@ -100,33 +100,32 @@ jobs:
     - run: pm2 start backend/index.js
       # run the unit tests
     - run: npm run test
-
-  setdev:
+  deploy:
     needs: [api-tests, wdio-tests, jest-tests]
-        runs-on: ubuntu-latest
+    name: "Deploy main to prod"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_KEY" > ~/.ssh/prod.key
+          chmod 600 ~/.ssh/prod.key
+          cat >>~/.ssh/config <<END
+          Host prod
+            HostName $SSH_HOST
+            User $SSH_USER
+            Port $SSH_PORT
+            IdentityFile ~/.ssh/prod.key
+            StrictHostKeyChecking no
+          END
+        env:
+          SSH_KEY: ${{ secrets.SSH_KEY }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}          
 
-        steps:
-          - name: Configure SSH
-            run: |
-              mkdir -p ~/.ssh/
-              echo "$SSH_KEY" > ~/.ssh/prod.key
-              chmod 600 ~/.ssh/prod.key
-              cat >>~/.ssh/config <<END
-              Host prod
-                HostName $SSH_HOST
-                User $SSH_USER
-                Port $SSH_PORT
-                IdentityFile ~/.ssh/prod.key
-                StrictHostKeyChecking no
-              END
+      - name: Deploy from prod 
+        run: ssh prod 'cd /var/www/prod.stackyield.net && git fetch && git reset --hard origin/main && npm install'
 
-            env:
-              SSH_KEY: ${{ secrets.SSH_KEY }}
-              SSH_HOST: ${{ secrets.SSH_HOST }}
-              SSH_USER: ${{ secrets.SSH_USER }}
-              SSH_PORT: ${{ secrets.SSH_PORT }}
-
-          - name: Deploy from main 
-            run: ssh dev 'cd /var/www/prod.stackyield.net && git fetch && git reset --hard origin/main && npm install'
-          - name: Restart app 
-            run: ssh dev 'pm2 restart prod'
+      - name: Restart app 
+        run: ssh dev  'pm2 restart devshop-prod'
