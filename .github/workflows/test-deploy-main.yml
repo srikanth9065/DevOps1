@@ -128,4 +128,4 @@ jobs:
         run: ssh prod 'cd /var/www/prod.stackyield.net && git fetch && git reset --hard origin/main && npm install'
 
       - name: Restart app 
-        run: ssh dev  'pm2 restart devshop-prod'
+        run: ssh main  'pm2 restart devshop-prod'
