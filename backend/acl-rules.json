@@ -9,6 +9,9 @@
     },
     "users": {
       "post": true
+    },
+    "place-my-order":{
+      "post":false
     }
   },
   "user": {
@@ -21,13 +24,8 @@
     },
     "place-my-order": {
       "post": true
-    },
-    "users": {
-    "get": true,
-    "put": true,
-    "delete": true
-  }
-},
+    }
+  },    
   "admin": {
     "tablesAndViews": {
       "get": true
