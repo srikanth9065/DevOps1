@@ -74,6 +74,9 @@ class App {
     listen('click', '.checkout', () => {
       this.productList.shoppingCart.checkout();
     });
+    listen('click', '.empty', () => {
+      this.productList.shoppingCart.checkoutEmpty();
+    });
 
   }
 

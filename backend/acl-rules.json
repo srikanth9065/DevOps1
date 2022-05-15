@@ -9,6 +9,9 @@
     },
     "users": {
       "post": true
+    },
+    "place-my-order":{
+      "post":false
     }
   },
   "user": {
@@ -22,12 +25,12 @@
     "place-my-order": {
       "post": true
     }
-  },
+  },    
   "admin": {
     "tablesAndViews": {
       "get": true
     },
-    "products": {
+      "products": {
       "get": true,
       "post": true,
       "put": true,
@@ -35,6 +38,12 @@
     },
     "login": {
       "get": true,
+      "delete": true
+    },
+    "users": {
+      "get": true,
+      "post": true,
+      "put": true,
       "delete": true
     },
     "orders": {
