@@ -46,12 +46,10 @@ class App {
       grabEl('.registerModal').style.display = 'block';
     });
 
-
     listen('click', '.login', () => {
       grabEl('.overlay').style.display = 'block';
       grabEl('.loginModal').style.display = 'block';
     });
-
     listen('click', '.logout', async () => {
       // logout
       await fetch('/api/login', { method: 'DELETE' });
