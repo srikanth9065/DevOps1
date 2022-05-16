@@ -1,5 +1,4 @@
 class ShoppingCart {
-
   orderRows = [];
 
   add(quantity, product) {
@@ -13,6 +12,13 @@ class ShoppingCart {
         found = true;
       }
     }
+    fetch('/api/login').then((response)=>{  
+      return response.json();  // converting byte data to json
+      }).then(data=>{
+        if (!data._error) {
+          grabEl('.checkout').style.display = 'inline';
+        }
+    ;})
 
     // if the product wasn't in the cart already
     if (!found) {
@@ -59,7 +65,7 @@ class ShoppingCart {
       <td>${this.formatSEK(totalSum)}</td>
     </tr>`;
     html += '</table><button class="closeCart">X</button>';
-    html += '<button class="checkout">Checkout</button>'
+    html += '<button class="checkout" style="display:none;">Checkout</button>'
     html += '<button class="empty">Empty</button>-</div>'
     return html;
   }
@@ -76,7 +82,6 @@ class ShoppingCart {
     this.orderRows = [];
     document.querySelector('footer').innerHTML =
       this.render();
-      alert('Thank you for your visiting!');
   }
 
 
